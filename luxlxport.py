@@ -16,7 +16,7 @@ def main():
     """
     base_folder = u'D:\\Users\\Joffa\\PycharmProjects\\luxlxport\\data'  # Ändra till var excelfilerna ligger
     out_folder = u'D:\\Users\\Joffa\\PycharmProjects\\luxlxport\\data'  # Ändra till var du vill lägga .csv-filerna
-    extension = u'.xltx'
+    extension = u'.xlsx'
 
     for root, dirnames, filenames in os.walk(base_folder):
         for filename in fnmatch.filter(filenames, u'*{}'.format(extension)):
