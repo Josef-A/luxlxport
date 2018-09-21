@@ -1,6 +1,6 @@
 # coding=utf-8
 """luxlxport
-Luddes Exlcel Export
+Luddes Excel Export
 
 """
 import fnmatch
