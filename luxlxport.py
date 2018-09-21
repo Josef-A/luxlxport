@@ -21,7 +21,10 @@ def main():
     for root, dirnames, filenames in os.walk(base_folder):
         for filename in fnmatch.filter(filenames, u'*{}'.format(extension)):
             file_path = os.path.join(root, filename)
-            df = pd.read_excel(file_path, sheet_name=u'Svar', skiprows=16)
+            if pd.__version__ < u'0.21.0':
+                df = pd.read_excel(file_path, sheetname=u'Svar', skiprows=16)
+            else:
+                df = pd.read_excel(file_path, sheet_name=u'Svar', skiprows=16)
             filename_wo_ext, ext = os.path.splitext(filename)
             csv_filename = os.path.join(out_folder, u'{}.csv'.format(filename_wo_ext))
             df.to_csv(csv_filename, encoding=u'utf8', index=False)
